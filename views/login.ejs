@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<main id="login">
+    <form action="/login" method="post">
+        <h2>Log In</h2>
+        
+        <% if(error){ %>
+            <p class="error"><%= message %></p>
+        <% } %>
+
+        <input type="email" name="email" id="" placeholder="Email Address" value="<%= user.email %>" required>
+        <input type="password" name="password" id="" placeholder="Password" value="<%= user.password %>" minlength="8" required>
+        <input type="submit" value="Log In">
+        <p>Don't have an account? <a href="/signup">Create one</a></p>
+        <a href="/admin/login" id="login-admin">Login as Professional </a>
+    </form>
+</main>
+
+<%- include('partials/footer') %>
